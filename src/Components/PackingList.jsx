@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Item from "./App";
+import Item from "./Item";
 
 export default function PackingList({
   items,
@@ -9,6 +9,7 @@ export default function PackingList({
 }) {
   const [sortBy, setSortBy] = useState("input");
   let sortedItems;
+  console.log(items)
   switch (sortBy) {
     case "input":
       sortedItems = items;
@@ -22,6 +23,7 @@ export default function PackingList({
       sortedItems = items
         .slice()
         .sort((a, b) => a.description.localeCompare(b.description));
+        
       break;
   }
   console.log(items);
